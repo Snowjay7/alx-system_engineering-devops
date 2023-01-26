@@ -1,5 +1,7 @@
-!/usr/bin/env bash
-# This script parses apache log files in list format
+#!/usr/bin/env bash
+# display visitor IP with HTTP status code
+# from the apache log file: 'apache-access.log'
 
-myfile="apache-access.log"
-awk -F' ' '{ print $1, $9}' $myfile
+LOGFILE='apache-access.log'
+
+awk '{print $1, $9}' $LOGFILE
