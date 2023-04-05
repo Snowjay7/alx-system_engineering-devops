@@ -1,0 +1,3 @@
+ * Restarting nginx nginx
+start-stop-daemon: warning: failed to kill 7869: No such process
+   ...done.
