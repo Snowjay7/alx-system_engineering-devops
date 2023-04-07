@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# This script displays information about subdomains.
+domain="$1"
+subdomain="$2"
+if [ ! "$subdomain" ]; then
+subdomain=(www lb-01 web-01 web-02)
+fi
+display_domain_info()
+{
+for sb in "${subdomain[@]}"
+    do
+    if [ "$domain" ]; then
+    dig "$sb.$domain" | grep -A1 'ANSWER SECTION:' | awk -v subdomain="$sb" 'NR==2 {print "The subdomain " subdomain " is a " $4 " record and points to " $5}' 
+    fi
+done 
+}
+display_domain_info
