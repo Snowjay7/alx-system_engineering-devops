@@ -4,11 +4,12 @@
 apt-get -y update
 apt-get -y install haproxy
 echo "
-frontend web_servers
+frontend beingjay-frontend
 	bind *:80
 	mode http
-	default_backend web_backend
-backend web_backend
+	default_backend beingjay-backend
+
+backend beingjay-backend
 	balance roundrobin
 	server 147941-web-01 18.204.8.143:80 check
 	server 147941-web-02 100.25.201.249:80 check
