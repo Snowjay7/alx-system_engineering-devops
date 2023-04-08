@@ -12,6 +12,6 @@ frontend beingjay-frontend
 backend beingjay-backend
 	balance roundrobin
 	server 147941-web-01 18.204.8.143:80 check
-	server 147941-web-02 100.25.201.249:80 check
+	server 147941-web-02 34.232.72.63:80 check
 " >> /etc/haproxy/haproxy.cfg
 service haproxy restart
