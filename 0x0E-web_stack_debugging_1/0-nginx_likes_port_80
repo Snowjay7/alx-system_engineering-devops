@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
-# Configure nginx for connection on port 80
-sudo sed -i 's/8080 default_server/80 default_server/g' /etc/nginx/sites-enabled/default
+# Configure nginx to listen 0n poet 80
+# delete the exiting ../sites-enabled/default and replace it with a copy of ../sites-available/default.
+#the flag -s creates a symoblic link and -f delete the exiting file and replace
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart
